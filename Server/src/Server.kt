@@ -22,7 +22,6 @@ class Server(port: Int = 5804) {
 
     inner class Client(val socket: Socket){
         private var sio: SocketIO? = null
-        private val id: Int = clients.size + 1
         fun startDialog(){
             sio = SocketIO(socket).apply{
                 addSocketClosedListener {
